@@ -1,0 +1,463 @@
+@font-face {
+  font-family: Yekan;
+  src: url(../fnt/Yekan.woff2) format(woff2),
+    url(../fnt/Yekan.woff) format(woff);
+}
+
+@font-face {
+  font-family: "Vazir Code";
+  src: url(../fnt/monospaced/Vazir-Code-Hack-WOL.woff2) format(woff2),
+    url(../fnt/monospaced/Vazir-Code-WOL.woff) format(woff);
+}
+
+html {
+  font-family: Yekan, Helvetica, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template: repeat(8, auto) / repeat(4, 1fr);
+  gap: 5px;
+}
+
+.header {
+  border-bottom: 1px solid #e2e8f0;
+  display: contents;
+}
+
+main {
+  display: contents;
+}
+
+#intro {
+  grid-area: 2/1/3/-1;
+}
+
+#news {
+  grid-area: 3/1/4/-1;
+}
+
+#events {
+  grid-area: 4/1/5/-1;
+}
+
+#program {
+  grid-area: 5/1/6/-1;
+}
+
+#participation {
+  grid-area: 6/1/7/-1;
+}
+
+#contact {
+  grid-area: 7/1/8/-1;
+}
+footer {
+  grid-area: 8/1/9/-1;
+  color: #fff;
+  background: linear-gradient(#00bd397c, #ff00008f);
+}
+
+.flexContainer {
+  display: flex;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-content: space-around;
+  justify-content: space-around;
+}
+
+h2 {
+  font-size: 1.9em;
+  font-weight: 600;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.17em;
+  font-weight: 600;
+  line-height: 1.5em;
+  padding: 0.5em 1em;
+  color: #005813;
+  text-align: center;
+}
+
+p {
+  line-height: 1.4em;
+  padding: 0 1em;
+  text-align: justify;
+}
+
+.mailIco {
+  font-size: xx-large;
+  float: left;
+}
+
+#logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-area: 1/1/2/3;
+}
+
+#log p:nth-of-type(1) {
+  font-size: x-large;
+  font-weight: 500;
+}
+#logo p:nth-of-type(2) {
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-width: 87px;
+}
+
+li.nav-item {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li::before {
+  content: "\200B";
+}
+
+@counter-style abgad {
+  system: alphabetic;
+  symbols: ا ب ج د ه و ز ح ط ی ک ل م ن س ع ف ص ق ر ش ت ث خ ذ ض ظ غ گ چ پ ژ;
+  suffix: ". ";
+  speak-as: spell-out;
+}
+
+ol {
+  list-style: abgad;
+  padding: 0 4em;
+}
+
+ol.abjad {
+  list-style: abgad;
+}
+
+ol li::marker {
+  font-family: "Vazir Code", "Courier New";
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  grid-area: 1/4/2/5;
+  justify-self: self-end;
+  z-index: 1;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #475569;
+}
+
+.nav-link:hover {
+  color: #009b22;
+  filter: drop-shadow(0.05em 0.05em rgb(0, 92, 8));
+  border-bottom: 3px solid #009b22;
+}
+
+.nav-logo {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: #009b22;
+}
+
+.nav-menu {
+  position: fixed;
+  left: -100%;
+  top: 3rem;
+  flex-direction: column;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+}
+
+.nav-menu.active {
+  left: 0;
+}
+
+.nav-item {
+  margin: 1em 0;
+}
+
+.nav-item:nth-last-child(1) a {
+  background-color: darkgreen;
+  border-radius: 8px;
+  color: #fff;
+  padding: 0 1em;
+}
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.plate {
+  background: #faf9f8;
+  line-height: 1.5em;
+  border-radius: 8px;
+}
+
+.btn {
+  float: left;
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-family: Yekan, Helvetica, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(122, 152, 28, 1);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.btn:hover {
+  background-color: rgba(70, 77, 95, 1);
+}
+
+.btn:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.presImg {
+  display: none;
+}
+
+.flexbox > div > ul > li > a {
+  color: #fff;
+  line-height: 1.5;
+}
+
+.flexbox > div > ul > li > a:hover,
+.flexbox > div > ul > li > a:active {
+  color: #bbb;
+}
+
+.center {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    grid-template: repeat(10, max-content) / repeat(7, 1fr);
+  }
+
+  #news > article {
+    flex-wrap: wrap;
+    padding: 0 7.5em;
+  }
+
+  #news > article > div {
+    flex-basis: 20vw;
+  }
+
+  #dateTime > p {
+    padding: 0 7.5em;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: static;
+    flex-direction: unset;
+  }
+
+  .nav-item {
+    margin: 0 0.7em;
+  }
+
+  .navbar {
+    grid-area: 1/3/2/7;
+  }
+
+  .flexbox {
+    padding: 0 1em;
+  }
+
+  .plate {
+    flex-basis: 25vw;
+    padding: 0 1em;
+  }
+
+  .presImg {
+    display: block;
+    min-width: 415px;
+    width: 35vw;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 840px) {
+  #logo {
+    grid-area: 1/2/2/3;
+  }
+  .navbar {
+    grid-area: 1/4/2/7;
+  }
+
+  .flexbox {
+    padding: 0 7.5em;
+  }
+  .presImg {
+    padding: 7.5em;
+  }
+}
+
+/* SlideShow */
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 2em;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 2em;
+  width: 100%;
+  text-align: center;
+  filter: drop-shadow(0.05em 0.05em orange);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.shActive,
+.dot:hover {
+  background-color: rgb(209, 209, 209);
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
