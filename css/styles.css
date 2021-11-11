@@ -28,6 +28,31 @@ img {
 .header {
   border-bottom: 1px solid #e2e8f0;
   display: contents;
+  overflow: hidden;
+}
+
+#skiptocontent a {
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  right: 0px;
+  color: white;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  border-bottom-left-radius: 8px;
+  background: #005813;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 100;
+}
+
+#skiptocontent a:focus {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  outline-color: transparent;
+  -webkit-transition: top 0.1s ease-in;
+  transition: top 0.1s ease-in;
 }
 
 main {
