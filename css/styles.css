@@ -104,11 +104,11 @@ p {
   grid-area: 1/1/2/3;
 }
 
-#log p:nth-of-type(1) {
+#log h1 {
   font-size: x-large;
   font-weight: 500;
 }
-#logo p:nth-of-type(2) {
+#logo p {
   font-size: 0.9rem;
   font-weight: 500;
   min-width: 87px;
