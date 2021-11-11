@@ -417,11 +417,13 @@ ol li::marker {
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #f2f2f2;
+  color: #fff;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
   top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-end-end-radius: 8px;
 }
 
 /* The dots/bullets/indicators */
