@@ -20,6 +20,11 @@ body {
   gap: 5px;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 .header {
   border-bottom: 1px solid #e2e8f0;
   display: contents;
